@@ -1,0 +1,14 @@
+flask
+flask_jwt_extended
+mysql-connector
+flask_sqlalchemy
+PyMySQL==0.8.1
+flask_cors
+flask-bcrypt
+watchdog
+gunicorn
+flask-marshmallow 
+marshmallow-sqlalchemy 
+marshmallow
+requests
+tweepy

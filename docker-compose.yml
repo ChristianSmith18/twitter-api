@@ -1,0 +1,28 @@
+version: '2'
+services:
+  python-api:
+    container_name: python-api
+    restart: always
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    links:
+      - db-python
+    ports:
+      - "8002:5002"
+    volumes:
+      - .:/src
+    restart: always
+  db-python:
+    image: mysql:latest
+    container_name: mysql-python
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - "32002:3308"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./db/schema:/docker-entrypoint-initdb.d/:ro
+    cap_add:
+      - SYS_NICE

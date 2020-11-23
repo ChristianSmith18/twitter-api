@@ -1,0 +1,10 @@
+/__pycache__
+/app/__pycache__
+/app/helpers/__pycache__
+/app/models/__pycache__
+/app/routes/__pycache__
+/app/helpers/decorators/__pycache__
+/app/helpers/enum/__pycache__
+/app/helpers/external_api/__pycache__
+/app/helpers/functions/__pycache__
+/app/helpers/validators/__pycache__
