@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS `Tweet`(
     `Id`                VARCHAR(36) NOT NULL,
     `TweetInfo`         JSON NOT NULL,
     `TweetTokenization` JSON NOT NULL,
+    `TweetLemma`        JSON NOT NULL,
     PRIMARY KEY(`Id`),
     UNIQUE INDEX `Id_UNIQUE` (`Id` ASC)
     ) ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE=utf8_bin;

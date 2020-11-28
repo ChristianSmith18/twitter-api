@@ -1,15 +1,18 @@
 from app import db
-import uuid,json
+import uuid
+import json
 from sqlalchemy.sql import expression
-from marshmallow import Schema,fields
+from marshmallow import Schema, fields
 import datetime
 from sqlalchemy.dialects.postgresql import JSON
 
+
 class Tweet(db.Model):
-    __tablename__    = 'Tweet'
-    Id                = db.Column(db.String(36), primary_key=True)
-    TweetInfo         = db.Column(db.JSON)
+    __tablename__ = 'Tweet'
+    Id = db.Column(db.String(36), primary_key=True)
+    TweetInfo = db.Column(db.JSON)
     TweetTokenization = db.Column(db.JSON)
+    TweetLemma = db.Column(db.JSON)
 
     def __repr__(self):
         info = 'Id: {} tweetInfo: {}>'
@@ -18,7 +21,9 @@ class Tweet(db.Model):
             self.TweetInfo
         )
 
+
 class TweetSchema(Schema):
-    Id                = fields.UUID()
-    TweetInfo         = fields.Str()
+    Id = fields.UUID()
+    TweetInfo = fields.Str()
     TweetTokenization = fields.Str()
+    TweetLemma = fields.Str()
